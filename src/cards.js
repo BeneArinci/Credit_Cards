@@ -1,4 +1,4 @@
-export const cards = [
+const cards = [
   {
     name: "Student Life",
     apr: "18.9%",
@@ -24,3 +24,5 @@ export const cards = [
     availability: "minimum income"
   }
 ]
+
+export default cards
