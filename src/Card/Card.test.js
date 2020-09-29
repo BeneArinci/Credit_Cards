@@ -13,16 +13,16 @@ test("renders the content of the passed card info", () => {
     credit_available: 1200,
     availability: "students"
   }
-  render(<Card cardinfo = {card}/>)
-  const name = screen.getByText("Student Life")
-  const apr = screen.getByText("18.9%")
-  const btod = screen.getByText("0 Months")
-  const pod = screen.getByText("6 Months")
-  const credit = screen.getByText("1200")
+  render(<Card cardinfo = {card}/>);
+  const name = screen.getByText("Student Life");
+  const apr = screen.getByText("18.9%");
+  const btod = screen.getByText("0 Months");
+  const pod = screen.getByText("6 Months");
+  const credit = screen.getByText("1200");
 
-  expect(name).toBeInTheDocument()
-  expect(apr).toBeInTheDocument()
-  expect(btod).toBeInTheDocument()
-  expect(pod).toBeInTheDocument()
-  expect(credit).toBeInTheDocument()
+  expect(name).toBeInTheDocument();
+  expect(apr).toBeInTheDocument();
+  expect(btod).toBeInTheDocument();
+  expect(pod).toBeInTheDocument();
+  expect(credit).toBeInTheDocument();
 })

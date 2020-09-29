@@ -2,3 +2,7 @@
   font-weight: bold;
   color: darkgreen;
 }
+
+.card {
+  min-width: 60%;
+}

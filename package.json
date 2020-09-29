@@ -30,7 +30,8 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css)$": "<rootDir>/__mocks__/styleMock.js",
+      "tachyons": "<rootDir>/__mocks__/substituted_tachyons.js"
     }
   },
   "dependencies": {

@@ -1,9 +1,9 @@
 import React from "react";
 import { hot } from "react-hot-loader";
 import "./App.css";
-import Card from "./Card/Card"
+import CardsList from "./CardsList/CardsList"
 import cards from "./cards"
-import 'tachyons'
+import "tachyons"
 
 class App extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class App extends React.Component {
     return(
       <div>
         <p>Hello, world</p>
-        <Card cardinfo = {cards[0]}/>
+        <CardsList filteredcards = {cards}/>
       </div>
     )
   }
