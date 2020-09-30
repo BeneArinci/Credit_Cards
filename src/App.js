@@ -4,6 +4,7 @@ import "./App.css";
 import CardsList from "./CardsList/CardsList"
 import UserForm from "./UserForm/UserForm"
 import cards from "./cards"
+import capitalize from "./functions"
 import "tachyons"
 
 class App extends React.Component {
@@ -20,12 +21,8 @@ class App extends React.Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
 
-  capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
   onNameChange (event) {
-    this.setState({userName: this.capitalizeFirstLetter(event.target.value)})
+    this.setState({userName: capitalize(event.target.value)})
   }
 
   onEmploymentChange (event) {
@@ -44,6 +41,7 @@ class App extends React.Component {
     this.setState({userName: this.state.userName})
     this.setState({userEmployment: this.state.userEmployment})
     this.setState({userIncome: this.state.userIncome})
+    console.log(this.state.userName)
   }
 
   render() {
