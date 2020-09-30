@@ -5,7 +5,7 @@ const cards = [
     balance_transfer_offer_duration: "0 Months",
     purchase_offer_duration: "6 Months",
     credit_available: 1200,
-    availability: "students"
+    availability: "student"
   },
   {
     name: "Anywhere Card",

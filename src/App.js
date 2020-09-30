@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       userName: '',
       userEmployment: '',
-      userIncome: ''
+      userIncome: '',
     }
     this.onNameChange = this.onNameChange.bind(this)
     this.onEmploymentChange = this.onEmploymentChange.bind(this)
@@ -20,16 +20,24 @@ class App extends React.Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
 
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   onNameChange (event) {
-    this.setState({userName: event.target.value})
+    this.setState({userName: this.capitalizeFirstLetter(event.target.value)})
   }
 
   onEmploymentChange (event) {
-    this.setState({userEmployment: event.target.value})
+    this.setState({userEmployment: event.target.value.toLowerCase()})
   }
 
   onIncomeChange (event) {
-    this.setState({userIncome: event.target.value})
+    if (parseInt(event.target.value)>=16000) {
+      this.setState({userIncome: "minimum income"})
+    } else {
+      this.setState({userIncome: "low income"})
+    }
   }
 
   onSubmit() {
@@ -39,11 +47,16 @@ class App extends React.Component {
   }
 
   render() {
+    const { userCards, userEmployment, userIncome } = this.state
+    const filteredCards = cards.filter(card => {
+      return (card.availability.includes("anyone") || card.availability.includes(userEmployment) || card.availability.includes(userIncome))
+    })
+
     return(
       <div>
         <p>Hello, world</p>
         <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
-        <CardsList filteredcards = {cards}/>
+        <CardsList filteredcards = {filteredCards}/>
       </div>
     )
   }
