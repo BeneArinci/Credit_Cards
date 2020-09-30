@@ -7,21 +7,35 @@ import cards from "./cards"
 import "tachyons"
 
 class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      userName: '',
+      userEmployment: '',
+      userIncome: ''
+    }
+    this.onNameChange = this.onNameChange.bind(this)
+    this.onEmploymentChange = this.onEmploymentChange.bind(this)
+    this.onIncomeChange = this.onIncomeChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+  }
 
   onNameChange (event) {
-    console.log(event.target.value)
+    this.setState({userName: event.target.value})
   }
 
   onEmploymentChange (event) {
-    console.log('dropdown', event.target.value)
+    this.setState({userEmployment: event.target.value})
   }
 
   onIncomeChange (event) {
-    console.log("income", event.target.value)
+    this.setState({userIncome: event.target.value})
   }
 
   onSubmit() {
-    console.log("submit")
+    this.setState({userName: this.state.userName})
+    this.setState({userEmployment: this.state.userEmployment})
+    this.setState({userIncome: this.state.userIncome})
   }
 
   render() {
