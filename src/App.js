@@ -7,12 +7,28 @@ import cards from "./cards"
 import "tachyons"
 
 class App extends React.Component {
+
+  onNameChange (event) {
+    console.log(event.target.value)
+  }
+
+  onEmploymentChange (event) {
+    console.log('dropdown', event.target.value)
+  }
+
+  onIncomeChange (event) {
+    console.log("income", event.target.value)
+  }
+
+  onSubmit() {
+    console.log("submit")
+  }
+
   render() {
-    console.log(cards)
     return(
       <div>
         <p>Hello, world</p>
-        <UserForm />
+        <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
         <CardsList filteredcards = {cards}/>
       </div>
     )
