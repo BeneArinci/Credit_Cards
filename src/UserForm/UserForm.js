@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) => {
   return(
@@ -29,11 +30,13 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
           </div>
         </fieldset>
         <div className="tc lh-copy mt3">
-          <p
-            href="#0" 
+        <Link to='/cards'>
+
+          <a
             className="f6 link dim black db pointer"
             onClick= {onSubmit}
-            > Submit</p>
+            > Submit</a>
+        </Link>
         </div>
       </div>
     </main>

@@ -1,5 +1,6 @@
 import React from "react";
 import { hot } from "react-hot-loader";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "./App.css";
 import CardsList from "./CardsList/CardsList"
 import UserForm from "./UserForm/UserForm"
@@ -45,17 +46,24 @@ class App extends React.Component {
   }
 
   render() {
-    const { userCards, userEmployment, userIncome } = this.state
+    const { userEmployment, userIncome } = this.state
     const filteredCards = cards.filter(card => {
       return (card.availability.includes("anyone") || card.availability.includes(userEmployment) || card.availability.includes(userIncome))
     })
 
     return(
-      <div>
-        <p>Hello, world</p>
-        <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
-        <CardsList filteredcards = {filteredCards}/>
-      </div>
+      <Router>
+        <Switch>
+        <div> 
+          <Route path='/' exact render={props =>
+            <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
+          } />
+          <Route exact path='/cards' render={props =>
+            <CardsList filteredcards = {filteredCards}/>
+          } />
+        </div>
+        </Switch>
+      </Router>
     )
   }
 }

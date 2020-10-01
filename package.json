@@ -38,6 +38,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
+    "react-router-dom": "^5.2.0",
     "tachyons": "^4.12.0"
   }
 }
