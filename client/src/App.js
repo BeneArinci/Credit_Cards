@@ -24,11 +24,11 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    fetch("http://localhost:5000/express_backend")
+    fetch("http://localhost:5000/cardslist")
     .then((res) => {
       return res.json()
     })
-    .then(data => this.setState({apiData: data.express}))
+    .then(data => this.setState({apiData: data}))
     .then(console.log(this.state.apiData))
   }
 
@@ -61,13 +61,14 @@ class App extends React.Component {
       return (card.availability.includes("anyone") || card.availability.includes(userEmployment) || card.availability.includes(userIncome))
     })
 
+    console.log(this.state.apiData)
+
     return(
       <Router>
         <Switch>
         <div> 
           <Route path='/' exact render={props =>
          <div>
-           <p>{this.state.apiData}</p>
             <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
          </div>
           } />
