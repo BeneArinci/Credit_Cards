@@ -8,6 +8,7 @@ import cards from "./cards"
 import capitalize from "./functions"
 import "tachyons"
 
+
 class App extends React.Component {
   constructor(){
     super()
@@ -15,7 +16,8 @@ class App extends React.Component {
       userName: '',
       userEmployment: '',
       userIncome: '',
-      apiData: null
+      apiData: null,
+      filteredCards: null
     }
     this.onNameChange = this.onNameChange.bind(this)
     this.onEmploymentChange = this.onEmploymentChange.bind(this)
@@ -29,7 +31,6 @@ class App extends React.Component {
       return res.json()
     })
     .then(data => this.setState({apiData: data}))
-    .then(console.log(this.state.apiData))
   }
 
   onNameChange (event) {
@@ -52,17 +53,18 @@ class App extends React.Component {
     this.setState({userName: this.state.userName})
     this.setState({userEmployment: this.state.userEmployment})
     this.setState({userIncome: this.state.userIncome})
-    console.log(this.state.userName)
+    this.filteringCards(this.state.apiData)
   }
 
-  render() {
+  filteringCards(cards) {
     const { userEmployment, userIncome } = this.state
     const filteredCards = cards.filter(card => {
       return (card.availability.includes("anyone") || card.availability.includes(userEmployment) || card.availability.includes(userIncome))
     })
+    this.setState({filteredCards: filteredCards})
+  }
 
-    console.log(this.state.apiData)
-
+  render() {
     return(
       <Router>
         <Switch>
@@ -73,7 +75,7 @@ class App extends React.Component {
          </div>
           } />
           <Route exact path='/cards' render={props =>
-            <CardsList filteredcards = {filteredCards}/>
+            <CardsList filteredcards = {this.state.filteredCards}/>
           } />
         </div>
         </Switch>
