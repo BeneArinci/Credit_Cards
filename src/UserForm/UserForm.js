@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) => {
   return(
+    <Router>
     <article className="br2 ba dark-gray b--black-10 shadow-2 mv4 w-100 w-50-m w-25-l mw5 center" data-testid = "user-form">
     <main className="pa4 black-80">
       <div className="measure center">
@@ -32,15 +33,16 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
         <div className="tc lh-copy mt3">
         <Link to='/cards'>
 
-          <a
+          <p
             className="f6 link dim black db pointer"
             onClick= {onSubmit}
-            > Submit</a>
+            > Submit</p>
         </Link>
         </div>
       </div>
     </main>
   </article>
+  </Router>
   )
 }
 
