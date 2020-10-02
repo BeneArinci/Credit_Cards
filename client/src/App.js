@@ -66,16 +66,12 @@ class App extends React.Component {
     return(
       <Router>
         <Switch>
-        <div> 
           <Route path='/' exact render={props =>
-         <div>
             <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
-         </div>
           } />
           <Route exact path='/cards' render={props =>
             <CardsList filteredcards = {this.state.filteredCards}/>
           } />
-        </div>
         </Switch>
       </Router>
     )

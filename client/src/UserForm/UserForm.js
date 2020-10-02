@@ -15,7 +15,7 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
           </div>
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="employment-type">Type of Employment</label>
-            <select name="form" id="cars" className = "pa1  ba bg-transparent hover-bg-light-green hover-black w-100"
+            <select name="form" id="employment" className = "pa1  ba bg-transparent hover-bg-light-green hover-black w-100"
               defaultValue={'Select'}
               onChange={onEmploymentChange}>
               <option value="Select" disabled hidden>Select</option>
@@ -31,13 +31,11 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
           </div>
         </fieldset>
         <div className="tc lh-copy mt3">
-        <Link to='/cards'>
-
-          <p
-            className="f6 link dim black db pointer"
-            onClick= {onSubmit}
-            > Submit</p>
-        </Link>
+            <Link to='/cards'>
+              <p className="f6 link dim black db pointer"
+              onClick= {onSubmit}
+              > Submit</p>
+            </Link>
         </div>
       </div>
     </main>
