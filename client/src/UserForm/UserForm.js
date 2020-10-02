@@ -15,9 +15,10 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
           </div>
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="employment-type">Type of Employment</label>
-            <select name="cars" id="cars" className = "pa1  ba bg-transparent hover-bg-light-green hover-black w-100"
+            <select name="form" id="cars" className = "pa1  ba bg-transparent hover-bg-light-green hover-black w-100"
+              defaultValue={'Select'}
               onChange={onEmploymentChange}>
-              <option value="" selected disabled hidden>Select</option>
+              <option value="Select" disabled hidden>Select</option>
               <option value="full-time">Full-Time</option>
               <option value="part-time">Part-Time</option>
               <option value="student">Student</option>
