@@ -4,9 +4,7 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "./App.css";
 import CardsList from "./CardsList/CardsList"
 import UserForm from "./UserForm/UserForm"
-import cards from "./cards"
 import capitalize from "./functions"
-import "tachyons"
 
 
 class App extends React.Component {
