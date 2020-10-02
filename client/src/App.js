@@ -15,11 +15,21 @@ class App extends React.Component {
       userName: '',
       userEmployment: '',
       userIncome: '',
+      apiData: null
     }
     this.onNameChange = this.onNameChange.bind(this)
     this.onEmploymentChange = this.onEmploymentChange.bind(this)
     this.onIncomeChange = this.onIncomeChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  componentDidMount () {
+    fetch("http://localhost:5000/express_backend")
+    .then((res) => {
+      return res.json()
+    })
+    .then(data => this.setState({apiData: data.express}))
+    .then(console.log(this.state.apiData))
   }
 
   onNameChange (event) {
@@ -56,7 +66,10 @@ class App extends React.Component {
         <Switch>
         <div> 
           <Route path='/' exact render={props =>
+         <div>
+           <p>{this.state.apiData}</p>
             <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
+         </div>
           } />
           <Route exact path='/cards' render={props =>
             <CardsList filteredcards = {filteredCards}/>

@@ -8,7 +8,8 @@
     "test": "jest",
     "build": "./node_modules/.bin/webpack --mode development"
   },
-  "proxy": "http://localhost:5000/",
+
+    "proxy": "http://localhost:5000/",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -36,6 +37,7 @@
     }
   },
   "dependencies": {
+    "http-proxy-middleware": "^1.0.5",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
