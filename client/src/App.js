@@ -4,9 +4,8 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "./App.css";
 import CardsList from "./CardsList/CardsList"
 import UserForm from "./UserForm/UserForm"
-import cards from "./cards"
 import capitalize from "./functions"
-import "tachyons"
+
 
 class App extends React.Component {
   constructor(){
@@ -15,11 +14,21 @@ class App extends React.Component {
       userName: '',
       userEmployment: '',
       userIncome: '',
+      apiData: null,
+      filteredCards: null
     }
     this.onNameChange = this.onNameChange.bind(this)
     this.onEmploymentChange = this.onEmploymentChange.bind(this)
     this.onIncomeChange = this.onIncomeChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  componentDidMount () {
+    fetch("http://localhost:5000/cardslist")
+    .then((res) => {
+      return res.json()
+    })
+    .then(data => this.setState({apiData: data}))
   }
 
   onNameChange (event) {
@@ -42,24 +51,29 @@ class App extends React.Component {
     this.setState({userName: this.state.userName})
     this.setState({userEmployment: this.state.userEmployment})
     this.setState({userIncome: this.state.userIncome})
-    console.log(this.state.userName)
+    this.filteringCards(this.state.apiData)
   }
 
-  render() {
+  filteringCards(cards) {
     const { userEmployment, userIncome } = this.state
     const filteredCards = cards.filter(card => {
       return (card.availability.includes("anyone") || card.availability.includes(userEmployment) || card.availability.includes(userIncome))
     })
+    this.setState({filteredCards: filteredCards})
+  }
 
+  render() {
     return(
       <Router>
         <Switch>
         <div> 
           <Route path='/' exact render={props =>
+         <div>
             <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
+         </div>
           } />
           <Route exact path='/cards' render={props =>
-            <CardsList filteredcards = {filteredCards}/>
+            <CardsList filteredcards = {this.state.filteredCards}/>
           } />
         </div>
         </Switch>

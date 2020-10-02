@@ -1,9 +1,8 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) => {
   return(
-    <Router>
     <article className="br2 ba dark-gray b--black-10 shadow-2 mv4 w-100 w-50-m w-25-l mw5 center" data-testid = "user-form">
     <main className="pa4 black-80">
       <div className="measure center">
@@ -42,7 +41,6 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
       </div>
     </main>
   </article>
-  </Router>
   )
 }
 
