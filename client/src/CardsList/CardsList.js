@@ -9,10 +9,15 @@ class CardsList extends React.Component{
       selectedCredit: 0
     }
     this.handleCardSelection = this.handleCardSelection.bind(this)
+    this.handleCardDeselection = this.handleCardDeselection.bind(this)
   }
 
   handleCardSelection (credit) {
     this.setState({selectedCredit: this.state.selectedCredit + credit})
+  }
+
+  handleCardDeselection (credit) {
+    this.setState({selectedCredit: this.state.selectedCredit - credit})
   }
 
 
@@ -24,7 +29,7 @@ class CardsList extends React.Component{
         <div className="flex flex-wrap">
           {
             this.props.filteredcards.map((card, index) => {
-              return <Card key = {index} cardinfo = {card} addCredit={this.handleCardSelection}/>
+              return <Card key = {index} cardinfo = {card} addCredit={this.handleCardSelection} removeCredit = {this.handleCardDeselection}/>
             })
           }
         </div>
