@@ -19,8 +19,6 @@ class CardsList extends React.Component{
   handleCardDeselection (credit) {
     this.setState({selectedCredit: this.state.selectedCredit - credit})
   }
-
-
  
   render() {
     console.log(this.props.filteredcards)

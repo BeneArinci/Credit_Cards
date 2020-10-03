@@ -1,9 +1,9 @@
 import React from 'react';
 import '@testing-library/jest-dom'
-import { screen, render } from "@testing-library/react";
+import { screen, render, getByText } from "@testing-library/react";
 import CardsList from './CardsList';
 
-test("renders the content of the passed card info", () => {
+test("renders the content of the passed card info and the selected credit component", () => {
   const cards =   [
     {
       name: "Student Life",
@@ -23,9 +23,11 @@ test("renders the content of the passed card info", () => {
     },
   ]
   render(<CardsList filteredcards = {cards}/>);
+  const creditComponent = screen.getByTestId('credit')
   const name1 = screen.getByText("Student Life");
   const name2 = screen.getByText("Anywhere Card")
-
+  expect(creditComponent).toBeInTheDocument()
   expect(name1).toBeInTheDocument()
   expect(name2).toBeInTheDocument()
 })
+
