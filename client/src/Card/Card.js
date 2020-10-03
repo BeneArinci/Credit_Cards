@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React from "react";
 import "./Card.css"
 
@@ -15,20 +14,21 @@ class Card extends React.Component {
     const {cardinfo} = this.props
     if (this.state.selected === false) {
       this.props.addCredit(cardinfo.credit_available)
-      this.setState({selected: true})
+      this.setState({selected: !this.state.selected})
       console.log("selected")
     } else {
       this.props.removeCredit(cardinfo.credit_available)
-      this.setState({selected: false})
+      this.setState({selected: !this.state.selected})
       console.log("deselected")
     }
 
   }
  
   render(){
-    const {cardinfo, addCredit, removeCredit} = this.props
+    const {cardinfo} = this.props
+    const {selected} = this.state
     return (
-      <article className="card shadow-3 grow pointer center mw5 mw6-ns br3 hidden ba b--black-10 mv4"
+      <article className={selected ? "selected-card center mw5 mw6-ns br3 hidden ba bw1 shadow-1 b--green mv4" : "card grow shadow-4 pointer center mw5 mw6-ns br3 hidden ba b--black-10 mv4"}
       onClick={() => this.selectDeselectCard()}>
         <h1 className="f3 bg-near-white br3 br--top orange mv0 pv2 ph3">{cardinfo.name}</h1>
         <div className="info-list bg-washed-green pa3 br3 b--black-10">

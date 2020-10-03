@@ -3,6 +3,7 @@
   color: darkgreen;
 }
 
-.card {
+.card, .selected-card {
   min-width: 60%;
 }
+
