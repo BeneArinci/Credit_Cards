@@ -1,9 +1,10 @@
 import React from "react";
 import "./Card.css"
 
-const Card = ({cardinfo}) => {
+const Card = ({cardinfo, addCredit}) => {
   return (
-    <article className="card shadow-3 grow pointer center mw5 mw6-ns br3 hidden ba b--black-10 mv4">
+    <article className="card shadow-3 grow pointer center mw5 mw6-ns br3 hidden ba b--black-10 mv4"
+    onClick={() => addCredit(cardinfo.credit_available)}>
       <h1 className="f3 bg-near-white br3 br--top orange mv0 pv2 ph3">{cardinfo.name}</h1>
       <div className="info-list bg-washed-green pa3 br3 b--black-10">
         <div className="f6 f4-ns lh-copy measure">
