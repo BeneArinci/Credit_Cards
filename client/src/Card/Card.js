@@ -29,6 +29,7 @@ class Card extends React.Component {
     const {selected} = this.state
     return (
       <article className={selected ? "selected-card center mw5 mw6-ns br3 hidden ba bw1 shadow-1 b--green mv4" : "card grow shadow-4 pointer center mw5 mw6-ns br3 hidden ba b--black-10 mv4"}
+      data-testid = "single-card"
       onClick={() => this.selectDeselectCard()}>
         <h1 className="f3 bg-near-white br3 br--top orange mv0 pv2 ph3">{cardinfo.name}</h1>
         <div className="info-list bg-washed-green pa3 br3 b--black-10">
