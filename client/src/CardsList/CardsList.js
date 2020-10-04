@@ -1,4 +1,5 @@
 import React from "react";
+import "./CardsList.css"
 import Card from "../Card/Card";
 import SelectedCredit from "../SelectedCredit/SelectedCredit";
 import Header from "../Header/Header"
@@ -24,15 +25,18 @@ class CardsList extends React.Component{
   render() {
     return (
       <div>
-        <Header userName = {this.props.userName}/>
-        <div className="flex flex-wrap">
+     
+          <Header userName = {this.props.userName}/>
+ 
+          <SelectedCredit credit = {this.state.selectedCredit}/>
+        <div className="list flex flex-wrap">
           {
             this.props.filteredcards.map((card, index) => {
               return <Card key = {index} cardinfo = {card} addCredit={this.handleCardSelection} removeCredit = {this.handleCardDeselection}/>
             })
           }
         </div>
-        <SelectedCredit credit = {this.state.selectedCredit}/>
+        
       </div>
     );
   }
