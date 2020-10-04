@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../Card/Card";
 import SelectedCredit from "../SelectedCredit/SelectedCredit";
+import Header from "../Header/Header"
 
 class CardsList extends React.Component{
   constructor () {
@@ -21,9 +22,9 @@ class CardsList extends React.Component{
   }
  
   render() {
-    console.log(this.props.filteredcards)
     return (
       <div>
+        <Header userName = {this.props.userName}/>
         <div className="flex flex-wrap">
           {
             this.props.filteredcards.map((card, index) => {

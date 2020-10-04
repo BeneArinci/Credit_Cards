@@ -15,11 +15,9 @@ class Card extends React.Component {
     if (this.state.selected === false) {
       this.props.addCredit(cardinfo.credit_available)
       this.setState({selected: !this.state.selected})
-      console.log("selected")
     } else {
       this.props.removeCredit(cardinfo.credit_available)
       this.setState({selected: !this.state.selected})
-      console.log("deselected")
     }
 
   }

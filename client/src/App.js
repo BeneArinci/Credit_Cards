@@ -70,7 +70,7 @@ class App extends React.Component {
             <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
           } />
           <Route exact path='/cards' render={props =>
-            <CardsList filteredcards = {this.state.filteredCards}/>
+            <CardsList filteredcards = {this.state.filteredCards} userName = {this.state.userName}/>
           } />
         </Switch>
       </Router>
