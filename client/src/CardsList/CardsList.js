@@ -3,6 +3,7 @@ import "./CardsList.css"
 import Card from "../Card/Card";
 import SelectedCredit from "../SelectedCredit/SelectedCredit";
 import Header from "../Header/Header"
+import BackLink from "../BackLink/BackLink"
 
 class CardsList extends React.Component{
   constructor () {
@@ -36,7 +37,7 @@ class CardsList extends React.Component{
             })
           }
         </div>
-        
+          <BackLink />
       </div>
     );
   }

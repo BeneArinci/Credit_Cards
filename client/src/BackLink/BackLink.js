@@ -1,15 +1,13 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import './BackLink.css'
 
 const BackLink = () => {
     return(
-      <div>
-      <Link to="/">
-      <p>Back</p>
-      </Link>
+      <div className="back-link">
+        <a href="http://localhost:3000/" className="f6 link dim black db pointer"
+        >Back</a>
       </div>
     )
-
 }
 
 export default BackLink
