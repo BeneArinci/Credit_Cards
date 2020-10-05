@@ -12,13 +12,16 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
             <input className="pa2 input-reset ba bg-transparent hover-bg-light-green hover-black w-100" type="text" id="user-name"
+              aria-label="name"
               onChange={onNameChange}/>
           </div>
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="employment-type">Type of Employment</label>
             <select name="form" id="employment" className = "pa1  ba bg-transparent hover-bg-light-green hover-black w-100"
+              aria-label="employment"
               defaultValue={'Select'}
               onChange={onEmploymentChange}>
+
               <option value="Select" disabled hidden>Select</option>
               <option value="full-time">Full-Time</option>
               <option value="part-time">Part-Time</option>
@@ -28,6 +31,7 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
           <div className="mt3">
             <label className="db fw6 lh-copy f6" htmlFor="annual-income">Annual Income</label>
             <input className="pa2 input-reset ba bg-transparent hover-bg-light-green hover-black w-100" type="text" id="user-income"
+              aria-label="income"
               onChange={onIncomeChange}/>
           </div>
         </fieldset>
