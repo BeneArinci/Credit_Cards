@@ -15,6 +15,15 @@ You have been asked to develop a web application to allow customers to enter the
 - The user should be allowed to select one or more of the returned cards and see the details for the cards selected.
 - When multiple cards are selected, the total amount of credit available to the user on those cards should be displayed.
 ```
+**How it works (visual)**<br>
+When the user opens the app he would find a form with an invitation to insert their data in order to visualise their credit availability<br>
+<img src="https://github.com/BeneArinci/Tech-test_TotallyMoney/blob/master/client/public/images/user-form.png" width="1300" height="auto">
+After entering their data a cards filtering happens and they'll be able to visualise only the available cards based on their details<br>
+<img src="https://github.com/BeneArinci/Tech-test_TotallyMoney/blob/master/client/public/images/rendered-cards.png" width="1300" height="auto">
+After entering their data a cards filtering function is run and they'll be able to visualise only the available cards based on their details<br>
+<img src="https://github.com/BeneArinci/Tech-test_TotallyMoney/blob/master/client/public/images/selected-cards.png" width="1300" height="auto">
+
+
 
 
 
