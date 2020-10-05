@@ -43,6 +43,16 @@ In particular, I had the opportunity to:
 - creating a React app from scratch, not using create-react-app
 - using React-router-dom (also in this case, I had just an experience in a group project)
 - practicing my testing skills with React. I started learning how to test a react app just 20 days ago
+- developing an extensible logic. It will be easy to add new cards to the API.
+I am working with React for less than 2 months and I am glad of what I've built. Also excited for what I'll be able to learn next :smile:
+
+### Areas of Improvement
+Everything is improvable and I'd love to hear your feedback about this web app :smile:<br>
+Something that I am already aware of and I cannot wait to work on is the following:
+- From a functionality point of view, the web app is currently working not considering an important edge case. The user is able to visualize the cards whether or not they enter any data in the form. I want to block that from happening.
+- Testing wise. I've not been able to feature test the entire app because I had issues with mocking the endpoint. More specifically, I was able to mock the fetch call but for some reasons my tests for the app component are not working. I need to understand why and make it work.
+- CSS and Styling. This wasn't my main focus. I was more interested in developing the required app functionalities. I mainly relied on Tachyons and some CSS so far but I would love to make it more personalised
+
 
 
 
