@@ -26,9 +26,12 @@ class App extends React.Component {
   componentDidMount () {
     fetch("http://localhost:5000/cardslist")
     .then((res) => {
+      // console.log(res.json())
       return res.json()
     })
-    .then(data => this.setState({apiData: data}))
+    .then((data) => {
+      console.log(data)
+      this.setState({apiData: data})})
   }
 
   onNameChange (event) {
@@ -63,6 +66,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.apiData)
     return(
       <Router>
         <Switch>
