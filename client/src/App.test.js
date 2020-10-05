@@ -18,7 +18,7 @@ function setupFetchStub(data) {
   }
 }
 
-test('Shows Hello, world!', () => {
+test('Shows the user form, world!', () => {
   global.fetch = jest.fn().mockImplementation(setupFetchStub(apiMock))
   render(<App />)
 
