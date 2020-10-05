@@ -23,6 +23,18 @@ After entering their data a cards filtering happens and they'll be able to visua
 After entering their data a cards filtering function is run and they'll be able to visualise only the available cards based on their details<br>
 <img src="https://github.com/BeneArinci/Tech-test_TotallyMoney/blob/master/client/public/images/selected-cards.png" width="1300" height="auto">
 
+### How to run the app & useful scripts
+As mentioned above, the app is made of a frontend and a backend separated parts. Both areas are using a specific package.json file for installing the needed components. <br>
+<br>
+In order to use the app, please follow these steps:
+- **clone the app** 
+- run **npm install** from inside the *main* folder (Server side)
+- run **npm install** from inside the *client* folder (React)
+- run the *backend server* using the command **npm start** from inside the *main* folder
+- run the *frontend server* using the command **npm start** from inside the *client* folder
+- enjoy using the app on localhost:3000<br>
+<br>
+If you want to run tests, go into the client folder throught your terminal and type: **npm test**
 
 
 
