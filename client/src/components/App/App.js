@@ -2,9 +2,9 @@ import React from "react";
 import { hot } from "react-hot-loader";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "./App.css";
-import CardsList from "./CardsList/CardsList"
-import UserForm from "./UserForm/UserForm"
-import capitalize from "./functions"
+import CardsList from "../CardsList/CardsList"
+import UserForm from "../UserForm/UserForm"
+import capitalize from "../../functions"
 
 
 class App extends React.Component {
