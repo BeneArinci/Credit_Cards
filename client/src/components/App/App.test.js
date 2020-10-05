@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from '@testing-library/react'
-import apiMock from '../__mocks__/apiMock.json'
+import apiMock from '../../../__mocks__/apiMock.json'
 
 import App from './App'
 
