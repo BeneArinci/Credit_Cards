@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "./App.css";
 import CardsList from "../CardsList/CardsList"
 import UserForm from "../UserForm/UserForm"
+import InvalidInput from "../InvalidInput/InvalidInput"
 import capitalize from "../../functions"
 
 
@@ -81,6 +82,7 @@ class App extends React.Component {
               userEmployment = {userEmployment}
               />
           } />
+          <Route path='/invalidinput' component={InvalidInput} />
           <Route exact path='/cards' render={props =>
             <CardsList filteredcards = {this.state.filteredCards} userName = {this.state.userName}/>
           } />
