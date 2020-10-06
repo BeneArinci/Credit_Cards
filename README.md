@@ -22,6 +22,9 @@ After entering their data a cards filtering happens and they'll be able to visua
 <img src="https://github.com/BeneArinci/Tech-test_TotallyMoney/blob/master/client/public/images/rendered-cards.png" width="1300" height="auto">
 After entering their data a cards filtering function is run and they'll be able to visualise only the available cards based on their details<br>
 <img src="https://github.com/BeneArinci/Tech-test_TotallyMoney/blob/master/client/public/images/selected-cards.png" width="1300" height="auto">
+If the data are incorrect, the user is sent to different route. Here, they are given the possibility to go back and insert again their data<br>
+<img src="https://github.com/BeneArinci/Tech-test_TotallyMoney/blob/master/client/public/images/invalid-input.png" width="1300" height="auto">
+
 
 ### How to run the app & useful scripts
 As mentioned above, the app is made of a frontend and a backend separated parts. Both areas are using a specific package.json file for installing the needed libraries. <br>
@@ -49,7 +52,7 @@ I am working with React for less than 2 months and I am glad of what I've built.
 ### Areas of Improvement
 Everything is improvable and I'd love to hear your feedback about this web app :smile:<br>
 Something that I am already aware of and I cannot wait to work on is the following:
-- From a functionality point of view, the web app is currently working not considering an important edge case. The user is able to visualize the cards whether or not they enter any data in the form. I want to block that from happening.
+- From a functionality point of view, in case of invalid input from the user, I would like to be able to block them in the form route, without having to send them to another route and, then, back to the form one.
 - Testing wise. I've not been able to feature test the entire app because I had issues with mocking the endpoint. More specifically, I was able to mock the fetch call but for some reasons my tests for the app component are not working. I need to understand why and make it work.
 - CSS and Styling. This wasn't my main focus. I was more interested in developing the required app functionalities. I mainly relied on Tachyons and some CSS so far but I would love to make it more personalised
 
