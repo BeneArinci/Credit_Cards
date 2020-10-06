@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './UserForm.css'
 
-const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) => {
+const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange, userName, userIncome, userEmployment}) => {
+  const isInputValid = () => {
+    return(userName !== '' && userEmployment !== '' && userIncome !== '')
+  }
   return(
     <form className="form br2 ba dark-gray b--black-10 bg-washed-green shadow-2 w-100 w-50-m w-25-l mw5 center" data-testid = "user-form">
     <main className="pa4 black-80">
@@ -35,7 +38,7 @@ const UserForm = ({onNameChange, onSubmit, onEmploymentChange, onIncomeChange}) 
           </div>
         </fieldset>
         <div className="tc lh-copy mt3">
-            <Link to='/cards'>
+            <Link to={isInputValid() ? '/cards' : '/invalidinput'}>
               <p className="f6 link dim black db pointer"
               onClick= {onSubmit}
               > Submit</p>

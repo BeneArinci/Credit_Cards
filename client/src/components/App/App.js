@@ -66,12 +66,20 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.apiData)
+    const { userName, userIncome, userEmployment} = this.state
     return(
       <Router>
         <Switch>
           <Route path='/' exact render={props =>
-            <UserForm onNameChange={this.onNameChange} onSubmit={this.onSubmit} onEmploymentChange={this.onEmploymentChange} onIncomeChange={this.onIncomeChange}/>
+            <UserForm 
+              onNameChange={this.onNameChange} 
+              onSubmit={this.onSubmit} 
+              onEmploymentChange={this.onEmploymentChange} 
+              onIncomeChange={this.onIncomeChange}
+              userName = {userName}
+              userIncome = {userIncome}
+              userEmployment = {userEmployment}
+              />
           } />
           <Route exact path='/cards' render={props =>
             <CardsList filteredcards = {this.state.filteredCards} userName = {this.state.userName}/>
