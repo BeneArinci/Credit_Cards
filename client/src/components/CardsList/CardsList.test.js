@@ -4,9 +4,6 @@ import { screen, render } from "@testing-library/react";
 import CardsList from './CardsList';
 
 
-
-
-
 test("renders the content of the passed card info and the selected credit component", () => {
   const cards =   [
     {
